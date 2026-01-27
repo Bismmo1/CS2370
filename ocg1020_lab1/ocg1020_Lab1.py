@@ -1,6 +1,6 @@
 ###CS 2370 lab1
 ## Ollie Grazier
-
+## Contains both the standard checkerboard
 def print_checker_boundary_row():
     print("+-+-+-+-+-+-+-+-+")
 
@@ -57,4 +57,5 @@ def draw_checker_board_with_pieces():
 
 
 draw_checker_board_with_pieces()
+
 
