@@ -1,4 +1,4 @@
-###CS 2370 labs.
+###CS 2370 lab1
 ## Ollie Grazier
 
 def print_checker_boundary_row():
@@ -57,3 +57,4 @@ def draw_checker_board_with_pieces():
 
 
 draw_checker_board_with_pieces()
+
