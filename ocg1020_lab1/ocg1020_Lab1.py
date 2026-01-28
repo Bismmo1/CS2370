@@ -84,7 +84,6 @@ def main():
     print()
     ##draw the draughts board
     draw_draughts_board()
-    print_draughts_spaces_under_boundary()
 
 ## Im not sure how this works but I will ask in class tomorrow
 if __name__ == "__main__":
