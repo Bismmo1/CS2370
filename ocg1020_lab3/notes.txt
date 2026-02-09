@@ -1,0 +1,25 @@
+import turtle
+import time
+
+screen = turtle.screen() #provides a canvas to draw on
+
+screen.title("CS2370") # changes window name
+
+screen.bgcolor("dark_blue") #changes background color
+
+t1 = turtle.Turtle() #create a turtle "object"
+
+t1.forward(50) #moves t1 forward 50
+
+t1.left(90) #rotates left 90 degrees
+
+t1.forward(150)
+
+t1.right(100)
+
+t1.forward(75)
+
+time.sleep(2) #slows down program by creating a break in between code.
+
+t1.backward(50) #moves the turtle backwards
+
