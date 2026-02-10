@@ -57,71 +57,136 @@ def setTurtle(t, x, y, angle):
 
 def addTo(t, x, y, angle):
     t.pu()
-    t.pos(a, b)
-    t.goto(x+a, y+b)
+    current_x = t.xcor()
+    current_y = t.ycor()
+    
+    t.goto(current_x + x, current_y + y)
+    
     t.lt(angle)
     t.pd()
-
 def door(t, width, height):
-    for i in range(2):
-        t.fd(width)
-        t.lt(90)
-        t.fd(height)
-        t.lt(90)
+        for i in range(2):
+            t.fd(width)
+            t.lt(90)
+            t.fd(height)
+            t.lt(90)
+            
 def window(t, size):
-    circle(t, size)
-    t.lt(90)
-    t.fd(size*2)
-    t.backward(size)
-    t.lt(90)
-    t.backward(size)
-    t.fd(size*2)
-    t.lt(180)
+     circle(t, size)
+     t.lt(90)
+     t.fd(size*2)
+     t.backward(size)
+     t.lt(90)
+     t.backward(size)
+     t.fd(size*2)
+     t.lt(180)
+     t.fd(size)
+     t.lt(90)
+     
+     
+def roof(t, size):
+     t.fd(size)
+     t.lt(135)
+     t.fd(size * .707)
+     t.lt(90)
+     t.fd(size * .707)
+     t.lt(135)
+
+
     
 def olympic(t, size):
-    setTurtle(t, size-20, size-20, 0)
+    top = (size/1.5)
+    addTo(t1, size, size, 0)
     t.color('blue')
     circle(t, size)
-    setTurtle(t, 150, 20, 0)
-    t.color('brown')
+    addTo(t1, size, size*-1.5, 0)
+    t.color('yellow')
     circle(t, size)
-    setTurtle(t, 200, 100, 0)
+    addTo(t1, top, size*1.5, 0)
     t.color('black')
     circle(t, size)
-    setTurtle(t, 250, 20, 0)
+    addTo(t1, size, size*-1.5, 0)
     t.color('green')
     circle(t, size)
-    setTurtle(t, 300, 100, 0)
+    addTo(t1, top, size*1.5, 0)
     t.color('red')
     circle(t, size)
 
-def main():
-    #Part 3
-    setTurtle(t1, -200, 100, 0)
-    rectangle(t1, 200)
-    #Part 4
-    setTurtle(t1, -200, 200, 0)
-    polygon(t1, 3, 200)
-    #Part 5
-    #Door
-    setTurtle(t1, -110, 100, 0)
-    door(t1, 25, 50)
-    #window 1
-    setTurtle(t1, -170, 150, 0)
-    window(t1, 20)
-    #window 2
-    setTurtle(t1, -30, 150, 0)
-    window(t1, 20)
+def house(t, size):
+    t.color("black")
+    rectangle(t, size)
+    addTo(t, 0, size/2, 0)
+    roof(t, size)
+    addTo(t, size/2.25, -size/2, 0)
+    door(t, size/8, size/4)
+    addTo(t, -size/5, size/5, 0)
+    window(t, size/15)
+    addTo(t, size*0.60 , 0, 0)
+    window(t, size/15)
+    t.lt(180)
 
-    #Part 6
-    olympic(t1, 60)
-    """
+def box(t, size):
+    t.color("black")
+    t.fd(size)
+    t.lt(60)
+    t.fd(size/3)
+    t.lt(30)
+    t.fd(size/2)
+    t.lt(90)
+    t.fd(size)
+    t.lt(60)
+    t.fd(size/3)
+    t.lt(30)
+    t.fd(size/2)
+    t.lt(150)
+    t.fd(size/3)
+    t.lt(30)
+    t.fd(size/2)
+    t.backward(size/2)
+    t.rt(90)
+    t.fd(size)
+    t.lt(90)
+    t.fd(size/2)
+    t.lt(150)
+    t.fd(size/3)
+    t.lt(30)
+    t.fd(size/2)
+    t.backward(size/2)
+    t.rt(90)
+    t.fd(size)
+    t.pu()
+    t.goto(0,0)
+    t.lt(180)
+    t.pd()
+
+def main():
+    olympic(t1, 50)
+    setTurtle(t1, 200, -100, 0)
+    olympic(t1, 25)
+    setTurtle(t1, -250, 100, 0)
+    house(t1, 200)
+
+    setTurtle(t1, -250, -100, 0)
+    house(t1, 150)
+    
+    
     #Part 1
+    setTurtle(t1, 250, 200, 0)
+    addTo(t1, 100, 100, 0)
     for i in range(3, 9): 
         polygon(t1, i, 50)
-    circle(t1, 50)
-    arc(t1, 100, 180)
-    polyline(t1, 50, 50, 50)"""
+    setTurtle(t1, 100, 200, 0)
+    addTo(t1, 100, 100, 0)
+    for i in range(3, 9): 
+        polygon(t1, i, 25)
+    
+    setTurtle(t1, -300, -300, 0)
+    box(t1, 200)
+    setTurtle(t1, 100, -300, 00)
+    box(t1, 100)
+    
+        
+    
 
 
 if __name__ == "__main__":
