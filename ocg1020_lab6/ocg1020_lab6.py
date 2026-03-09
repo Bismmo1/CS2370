@@ -58,14 +58,37 @@ def perfectNumber(n):
         return total == n
     
 #Part7
-def gotMoney():
-    money = 0
+def GotMoney():
+    #Number of Iterations
+    iterations = int(input("Enter # of iterations: "))
+    for _ in range(iterations):
+        #I had to specify float, it was not working for a little because I had it as an int input
+        available_money = float(input())
+        temp = 0.0
+
+        #I found it easiest to test if input would be true or above 0, to keep looping
+        while True:
+            n = float(input())
+            if n < 0:
+                break
+            temp += n
+            
+        #tax 
+        total = temp * 1.08
+        
+        #do checks to see if you have enough money, then print
+        if available_money >= total:
+            print("ENOUGH MONEY")
+        else:
+            shortfall = total - available_money
+            rounded_shortfall = round(shortfall, 2)
+            print(f"$ -{rounded_shortfall} SHORT")
 
 def main():
 
 
     #Part 1
-    '''print("Part 1: GCD Calculator")
+    print("Part 1: GCD Calculator")
     x = int(input("Enter first number: "))
     y = int(input("Enter second number: "))
     print("GCD of", x, "and", y, "is", gcd(x, y))
@@ -101,11 +124,11 @@ def main():
     if perfectNumber(n):
         print(n, "is a perfect number.")
     else:
-        print(n, "is not a perfect number.")'''
+        print(n, "is not a perfect number.")
     
     #Part 7
     print("Part 7: Got Money?")
-    gotMoney()
+    GotMoney()
 
 
 main()
