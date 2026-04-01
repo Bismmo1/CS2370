@@ -115,7 +115,7 @@ def main():
 
     #Lists
     numList = [1,5, 2, 3, 5, 6,]
-    list2 = "hello yes there hello hello yes friend yes hello"
+    string = "hello yes there hello hello yes friend yes hello"
 
 
     #list for personal def version of part 5
@@ -138,7 +138,7 @@ def main():
     print('======================')
 
     print("Part 5: CountWords")
-    print(CountWords(list2))
+    print(CountWords(string))
     print('======================')
     
 
