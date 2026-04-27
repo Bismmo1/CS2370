@@ -1,0 +1,8 @@
+Game: 1 Tie, R same as R 
+Game: 2 A Wins, R beats S 
+Game: 3 B Wins, R beats S 
+Game: 4 A Wins, S beats P 
+Game: 5 Tie, P same as P 
+Game: 6 B Wins, S beats P 
+Game: 7 B Wins, P beats R 
+B Wins the Game!
